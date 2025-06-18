@@ -1,0 +1,20 @@
+{
+  "name": "proposals",
+  "version": "1.0.0",
+  "description": "",
+  "main": "proposals.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nickz22/proposals.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nickz22/proposals/issues"
+  },
+  "homepage": "https://github.com/Nickz22/proposals#readme"
+}
