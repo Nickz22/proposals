@@ -7,7 +7,7 @@ const proposals = [
     {
         slug: 'linters',
         title: 'Proposal: Linters',
-        description: 'An interactive proposal to implement Javascript and Apex linting solutions, improving code quality and boosting developer productivity.',
+        description: 'A proposal to implement Javascript and Apex linting solutions to prevent Intl8n bugs, improve code quality and boost developer productivity.',
         htmlContent: `
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
                 <style>
@@ -25,7 +25,7 @@ const proposals = [
                 <body class="text-slate-700">
                     <header class="text-center mb-16">
                         <h1 class="text-4xl md:text-5xl font-extrabold text-slate-800 mb-4">Proposal: Linters</h1>
-                        <p class="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">An interactive proposal to implement Javascript and Apex linting solutions, improving code quality and boosting developer productivity.</p>
+                        <p class="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">A proposal to implement Javascript and Apex linting solutions to prevent Intl8n bugs, improve code quality and boost developer productivity.</p>
                     </header>
                     <section id="dashboard" class="mb-20">
                         <h2 class="text-3xl font-bold text-center text-slate-800 mb-2">Projected Annual Savings</h2>
