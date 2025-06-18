@@ -1,28 +1,28 @@
 const fs = require('fs');
 const path = require('path');
-// Note: Changed to require the CommonJS-exported module
 const proposals = require('./proposals.js');
 
 const template = fs.readFileSync(path.join(__dirname, 'proposal-template.html'), 'utf-8');
-const outputDir = path.join(__dirname, 'dist');
+const outputDir = path.join(__dirname, 'dist'); // We'll put generated files in a 'dist' folder
 
+// Create output directory if it doesn't exist
 if (!fs.existsSync(outputDir)) {
     fs.mkdirSync(outputDir);
 }
 
+// --- Generate Individual Proposal Pages ---
 proposals.forEach(proposal => {
     console.log(`Generating ${proposal.slug}.html...`);
 
-    let finalHtml = template
-        .replace(/{{TITLE}}/g, proposal.title)
-        .replace(/{{DESCRIPTION}}/g, proposal.description)
-        // CORRECTED LINES: Using a function to avoid special character issues with '$'
-        .replace('{{CONTENT}}', () => proposal.htmlContent)
-        .replace('{{SCRIPT}}', () => (proposal.initScript ? proposal.initScript.toString() : 'null'));
+    let finalHtml = template.replace(/{{TITLE}}/g, proposal.title)
+                             .replace(/{{DESCRIPTION}}/g, proposal.description)
+                             .replace('{{CONTENT}}', proposal.htmlContent)
+                             .replace('{{SCRIPT}}', proposal.initScript ? proposal.initScript.toString() : 'null');
     
     fs.writeFileSync(path.join(outputDir, `${proposal.slug}.html`), finalHtml);
 });
 
+// --- Generate a Main Index Page ---
 let indexLinks = proposals.map(p => 
     `<li><a href="${p.slug}.html" class="text-xl text-blue-600 hover:underline">${p.title}</a><p class="text-slate-500">${p.description}</p></li>`
 ).join('');
